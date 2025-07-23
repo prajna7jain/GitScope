@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Dark Mode Css */
 body {
     background-color: #0d1117;
     color: #c9d1d9;
@@ -7,4 +8,15 @@ body {
 }
 button {
     background: #238636;
+}
+
+/* Light Mode css */
+
+body.light {
+    background-color: #ffffff;
+    color: #24292e;
+    border-color: #d0d7de;
+}
+button.light {
+    background: #0366d6;
 }

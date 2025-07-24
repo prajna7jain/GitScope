@@ -1,5 +1,9 @@
+import Info from "../components/Info"
+
 export default function Home() {
     return(
-        <h1>Home</h1>
+        <main className="w-full h-auto flex justify-center items-center p-10">
+            <Info />
+        </main>
     )
 }

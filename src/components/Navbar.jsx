@@ -25,7 +25,7 @@ export default function Navbar() {
             <div id="btn-options" className="flex items-center gap-10">
                 <button className="p-2 rounded-lg flex gap-2 items-center">
                     <i className="fa-solid fa-star text-xl"></i>
-                    <span className="text-xl font-semibold"><a href="">Star on Github</a></span>
+                    <span className="text-xl font-semibold"><a href="https://github.com/ig-ayush/RepoRadar">Star on Github</a></span>
                 </button>
                 <div className="toggle-switch">
                     <label className="switch-label">

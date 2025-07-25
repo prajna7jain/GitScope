@@ -1,7 +1,8 @@
-export default function RepoInput({ setRepo }) {
+export default function RepoInput({ repo, setRepo }) {
    
     const submit = (event) =>{
         event.preventDefault();
+        onSearch(repo);
     }
     
     return (

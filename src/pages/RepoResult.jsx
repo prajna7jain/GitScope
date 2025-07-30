@@ -1,4 +1,4 @@
-export default function RepoResult({ repo, setRepo}) {
+export default function RepoResult({ repo }) {
     return(
         <main>
             {repo}

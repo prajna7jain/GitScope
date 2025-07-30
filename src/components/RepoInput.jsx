@@ -1,8 +1,11 @@
+import { useState } from "react";
+
 export default function RepoInput({ repo, setRepo }) {
-   
+    const [inputValue, setInputValue] = useState("");
+    
     const submit = (event) =>{
         event.preventDefault();
-        onSearch(repo);
+        setRepo(inputValue)
     }
     
     return (
@@ -12,7 +15,7 @@ export default function RepoInput({ repo, setRepo }) {
                 <div id="repo-name" className="flex flex-col gap-4">
                     <input type="text" className="border border-[#1f2937] p-4 w-[30vw] bg-[#272e36] rounded-lg text-xl" 
                     placeholder="github.com/owner/repo"
-                    onChange={(e)=> setRepo(e.target.value)}
+                    onChange={(e)=> setInputValue(e.target.value)}
                     required
                     />
                 </div>

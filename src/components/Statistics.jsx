@@ -1,7 +1,19 @@
 export default function Statistics() 
 {
     return (
-        <main className="bg-[#272e36] w-fit h-auto flex p-10 gap-10">
+           <main className="border border-[#1f2937] rounded-lg  h-auto w-full p-8 m-8 flex flex-col gap-10">
+            <div id="heading" className="flex justify-between">
+               <div id="left-side" className="flex gap-3 items-center">
+                 <img src="Assests/contribution.svg" alt="Contribution" />
+                <h1 className="text-lg font-bold">Contributors</h1>
+               </div>
+               <div id="right-side" className="">
+                    <h1 className="p-2 rounded-lg bg-[#272e36]">Total contributors: </h1>
+               </div>
+            </div> 
+
+            <div id="repo-result" className="">
+                 <main className="bg-[#272e36] w-fit h-auto flex p-10 gap-10 rounded-lg">
             <div id="profile-pic" className="w-20 h-20">
                 <img src="Assests/image.jpg" alt="Owner Profile Pic" className="w-full h-full rounded-full object-cover"/>
             </div>
@@ -57,6 +69,8 @@ export default function Statistics()
                         </div>
                     </div>
                 </div>
+            </div>
+        </main>
             </div>
         </main>
     )

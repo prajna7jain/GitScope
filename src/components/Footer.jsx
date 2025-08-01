@@ -1,9 +1,11 @@
+import icon from "/Assests/Icon.svg"
+
 export default function Footer() {
   return (
     <footer className="bg-[#010409] w-full h-auto p-4 sm:p-6 md:p-7 md:pl-[5.5rem] md:pr-[5.5rem] flex flex-col gap-3 sm:gap-4 md:gap-5">
       <div className="flex flex-col md:flex-row justify-around items-center md:items-start gap-4 md:gap-8">
         <div id="logo" className="flex items-center gap-3 md:gap-5">
-          <img src="Assests/Icon.svg" alt="Logo" className="w-6 sm:w-7 md:w-8" />
+          <img src={icon} alt="Logo" className="w-6 sm:w-7 md:w-8" />
           <h1 className="text-base sm:text-lg md:text-xl font-bold">RepoRadar</h1>
         </div>
 

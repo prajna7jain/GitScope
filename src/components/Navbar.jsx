@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import icon from "/Assests/Icon.svg"
 
 export default function Navbar() {
 
@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className="bg-[#010409] w-full px-3 py-4 sm:px-7 sm:py-7 flex flex-row justify-around items-center gap-2 sm:gap-5">
       <div id="logo" className="w-fit flex items-center gap-2 sm:gap-5">
         <img
-          src="Assests/Icon.svg"
+          src={icon}
           alt="Logo"
           className="w-6 sm:w-10"
         />

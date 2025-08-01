@@ -15,3 +15,11 @@ export async function PullRs(owner, repo) {
     const PR = response.json();
     return PR;
 }
+
+export async function contribution(owner, repo) {
+  const reponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`);
+  const contributions = await reponse.json();
+  const totalContribution = contributions.reduce((sum, user) => sum + user.contributions, 0);
+
+  return totalContribution;
+}

@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-export default function RepoInput({ repo, setRepo }) {
+export default function RepoInput({ setRepoURL }) {
     const [inputValue, setInputValue] = useState("");
     
     const submit = (event) =>{
         event.preventDefault();
-        setRepo(inputValue)
+        setRepoURL(inputValue)
     }
     
     return (

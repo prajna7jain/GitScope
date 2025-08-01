@@ -4,13 +4,13 @@ import RepoInput from "../components/RepoInput"
 import RepoResult from "./RepoResult";
 
 export default function Home() {
-    const [repo, setRepo] = useState("");
+    const [repoURL, setRepoURL] = useState("");
 
     return(
         <main className="w-full h-auto flex flex-col justify-center items-center gap-2 p-10">
             <Info />
-            <RepoInput  setRepo={setRepo}/>
-            <RepoResult repo={repo} />
+            <RepoInput  setRepoURL={setRepoURL}/>
+            <RepoResult repoURL={repoURL} />
         </main>
     )
 }

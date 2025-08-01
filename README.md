@@ -16,7 +16,6 @@
   - Closed Pull Requests
   - Merged Pull Requests
   - Total Contributions
-- 🌙 Supports both Light and Dark mode (toggle switch)
 - ⚠️ Error handling for invalid or inaccessible URLs
 
 ---
@@ -27,24 +26,6 @@
 - **API:** GitHub REST API v3
 
 ---
-
-RepoRadar/
-├── public/
-│   └── favicon.ico
-│
-├── src/
-│   ├── assets/              # SVG icons and static assets
-│   │   └── Icon.svg
-│   ├── components/          # Reusable components (Navbar, Statistics, Error, NoData, etc.)
-│   ├── services/            # API calls for repo, user, and pull request data
-│   ├── App.jsx              # Main app structure
-│   ├── index.css            # Tailwind + global styles
-│   └── main.jsx             # React entry point
-│
-├── .gitignore
-├── package.json
-└── README.md
-
 
 ## 📦 Installation
 

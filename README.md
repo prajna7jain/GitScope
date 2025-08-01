@@ -1,12 +1,55 @@
-# React + Vite
+# 📊 RepoRadar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**RepoRadar** is a GitHub repository analyzer that lets users enter any public GitHub repository URL and instantly view important insights such as pull requests, merge status, total contributions, and owner profile details.
 
-Currently, two official plugins are available:
+🔗 **Live Site:** [https://reporadar-eta.vercel.app](https://reporadar-eta.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🌐 Enter any GitHub repo URL to fetch details
+- 👤 Displays repo owner’s profile picture and username
+- 📊 Shows:
+  - Total Pull Requests
+  - Open Pull Requests
+  - Closed Pull Requests
+  - Merged Pull Requests
+  - Total Contributions
+- 🌙 Supports both Light and Dark mode (toggle switch)
+- ⚠️ Error handling for invalid or inaccessible URLs
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React.js, Tailwind CSS
+- **API:** GitHub REST API v3
+
+---
+
+RepoRadar/
+├── public/
+│   └── favicon.ico
+│
+├── src/
+│   ├── assets/              # SVG icons and static assets
+│   │   └── Icon.svg
+│   ├── components/          # Reusable components (Navbar, Statistics, Error, NoData, etc.)
+│   ├── services/            # API calls for repo, user, and pull request data
+│   ├── App.jsx              # Main app structure
+│   ├── index.css            # Tailwind + global styles
+│   └── main.jsx             # React entry point
+│
+├── .gitignore
+├── package.json
+└── README.md
+
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/ig-ayush/RepoRadar.git
+cd RepoRadar
+npm install
+npm run dev

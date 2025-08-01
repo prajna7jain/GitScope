@@ -10,3 +10,8 @@ export async function userData(owner) {
   return user;
 }
 
+export async function PullRs(owner, repo) {
+    const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls?state=all`);
+    const PR = response.json();
+    return PR;
+}

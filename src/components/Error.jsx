@@ -1,7 +1,7 @@
-export default function Error() {
+export default function Error({ error }) {
     return(
-        <main>
-            Error
+        <main className="text-xl text-red-600 font-semibold">
+            {error}
         </main>
     )
 }

@@ -16,7 +16,7 @@ export default function RepoInput({ setRepoURL }) {
                     <input type="text" className="border border-[#1f2937] p-4 w-[30vw] bg-[#272e36] rounded-lg text-xl" 
                     placeholder="github.com/owner/repo"
                     onChange={(e)=> setInputValue(e.target.value)}
-                    required
+                    
                     />
                 </div>
                 <button id="statisticsBtn" type="submit" className="w-max h-fit p-3.5 text-xl font-semibold flex items-center gap-2 rounded-lg group cursor-pointer">

@@ -1,29 +1,50 @@
 import { useEffect, useState } from "react"
-import  {RepoData, userData}  from "../services/RepoData.js";
+import  {RepoData, userData, PullRs}  from "../services/RepoData.js";
 
-export default function Statistics({ repoURL }) 
+export default function Statistics({ repoURL, setError }) 
 {
     const [repoData, setRepoData] = useState({});
-    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
         const fetchRepoData = async () =>{
-
+        
+            try{
+                setLoading(true);
             const [owner, repo] = new URL(repoURL).pathname.slice(1).split("/")
             const Data = await RepoData(owner, repo);
             const user = await userData(owner);
+            const pulls = await PullRs(owner, repo);
             
             const user_name = Data.full_name.split("/")[0];
-
+            const mergePR = pulls.filter((m)=> m.merged_at).length;
+            const openPR = pulls.filter((o)=> o.state == "open").length;
+            const closePR = pulls.filter((c)=> c.state == "closed").length;
 
             setRepoData({
                 repo : Data,
                 user : user_name,
-                user_profile : user.avatar_url
+                user_profile : user.avatar_url,
+                PR : pulls.length,
+                mergePR,
+                openPR,
+                closePR
             });
+
+            setError("");
+            setLoading(false);
+        }catch(err) {
+            const errMsg = " ⚠️ Invalid or Not Found Repository URL";
+            setError(errMsg);
+            console.err(err)
+            setLoading(false);
+        }
+
         }
         fetchRepoData();
     },[repoURL]);
+
+     if (loading) return <p className="text-gray-500 text-sm">Loading repository data...</p>;
 
     return (
            <main className="border border-[#1f2937] rounded-lg  h-auto w-full p-8 m-8 flex flex-col gap-10">
@@ -67,7 +88,7 @@ export default function Statistics({ repoURL })
                             <path d="M13 6h3a2 2 0 0 1 2 2v7"></path>
                             <line x1="6" x2="6" y1="9" y2="21"></line>
                             </svg>
-                            <span>5 PRs</span>
+                            <span>{repoData.PR} PRs</span>
                         </div>
                         <div id="merge" className="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -84,15 +105,19 @@ export default function Statistics({ repoURL })
                               <path d="M6 21V9a9 9 0 0 0 9 9"></path>
                             </svg>
                             
-                            <span>5 PRs</span>
+                            <span>{repoData.mergePR} merged</span>
                         </div>
                         <div id="open" className="flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-pull-request w-4 h-4 text-yellow-600"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M13 6h3a2 2 0 0 1 2 2v7"></path><line x1="6" x2="6" y1="9" y2="21"></line></svg>
-                            <span>5 PRs</span>
+                            <span>
+                                {repoData.openPR} Open
+                            </span>
                         </div>
                         <div id="closed" className="flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-pull-request-closed w-4 h-4 text-red-600"><circle cx="6" cy="6" r="3"></circle><path d="M6 9v12"></path><path d="m21 3-6 6"></path><path d="m21 9-6-6"></path><path d="M18 11.5V15"></path><circle cx="18" cy="18" r="3"></circle></svg>
-                            <span>5 PRs</span>
+                            <span>
+                                {repoData.closePR} Close
+                            </span>
                         </div>
                     </div>
                 </div>

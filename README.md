@@ -1,6 +1,6 @@
-# 📊 RepoRadar
+# 📊 GitScope
 
-**RepoRadar** is a GitHub repository analyzer that lets users enter any public GitHub repository URL and instantly view important insights such as pull requests, merge status, total contributions, and owner profile details.
+**GitScope** is a GitHub repository analyzer that lets users enter any public GitHub repository URL and instantly view important insights such as pull requests, merge status, total contributions, and owner profile details.
 
 🔗 **Live Site:** [https://reporadar-eta.vercel.app](https://reporadar-eta.vercel.app)
 
